@@ -2,12 +2,22 @@
 // ReglasREST.js
 // .....................................................................
 module.exports.cargar = function(servidorExpress, laLogica) {
+
   // .......................................................
   // GET /prueba
   // .......................................................
   servidorExpress.get('/prueba/', function(peticion, respuesta) {
     console.log(" * GET /prueba ")
     respuesta.send("¡Funciona!")
+  }) // get /prueba
+
+  // .......................................................
+  // GET /marca
+  // .......................................................
+  servidorExpress.get('/marca/', function(peticion, respuesta) {
+    console.log(" * GET /marca ")
+    laLogica.abrirMarca()
+    respuesta.send("¡Abierta la web de marca con éxito!")
   }) // get /prueba
 
 

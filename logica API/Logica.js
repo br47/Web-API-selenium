@@ -2,13 +2,20 @@
 // Logica.js
 // .....................................................................
 const sqlite3 = require("sqlite3")
+
+const webdriver = require('selenium-webdriver'),
+  By = webdriver.By,
+  until = webdriver.until;
 // .....................................................................
 // .....................................................................
 module.exports = class Logica {
+
   // .................................................................
   // nombreBD: Texto
   // -->
-  //    constructor ()  -->
+  // constructor ()
+  // -->
+  //
   // .................................................................
   constructor(nombreBD, cb) {
     this.laConexion = new sqlite3.Database(nombreBD,
@@ -20,6 +27,18 @@ module.exports = class Logica {
       })
   } // ()
 
+  // .................................................................
+  //
+  // -->
+  // abrirMarca ()
+  // -->
+  //
+  // .................................................................
+  abrirMarca(){
+    var driver = new webdriver.Builder().forBrowser('chrome').build();
+
+    driver.get('https://www.marca.com/')
+  } // ()
   // .................................................................
   //          cerrar() -->
   // .................................................................
