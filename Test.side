@@ -1,0 +1,112 @@
+{
+  "id": "aaf7f868-66c7-4f87-835a-d8018ab0e17a",
+  "version": "2.0",
+  "name": "test",
+  "url": "https://www.companyweb.be",
+  "tests": [{
+    "id": "de1b313d-6eed-4746-8592-17e309903cc4",
+    "name": "test",
+    "commands": [{
+      "id": "a0cd296b-7d61-476d-a1fc-aebdb5973815",
+      "comment": "",
+      "command": "open",
+      "target": "/en",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "135d028a-165c-4661-a378-9488187733b4",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1440x797",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "eec36dd9-9314-4a98-a312-9a99f495d23b",
+      "comment": "",
+      "command": "click",
+      "target": "id=nameOrVat",
+      "targets": [
+        ["id=nameOrVat", "id"],
+        ["name=NameOrVat", "name"],
+        ["css=#nameOrVat", "css:finder"],
+        ["xpath=//input[@id='nameOrVat']", "xpath:attributes"],
+        ["xpath=//form[@id='freeSearch']/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "044abc4d-9eda-4344-ab76-122999ce0778",
+      "comment": "",
+      "command": "type",
+      "target": "id=nameOrVat",
+      "targets": [
+        ["id=nameOrVat", "id"],
+        ["name=NameOrVat", "name"],
+        ["css=#nameOrVat", "css:finder"],
+        ["xpath=//input[@id='nameOrVat']", "xpath:attributes"],
+        ["xpath=//form[@id='freeSearch']/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "auraportal"
+    }, {
+      "id": "02981d21-2dc4-474a-bdf8-4c8ff75c5ed5",
+      "comment": "",
+      "command": "click",
+      "target": "css=.fa-search",
+      "targets": [
+        ["css=.fa-search", "css:finder"],
+        ["xpath=//form[@id='freeSearch']/div[2]/span/button/i", "xpath:idRelative"],
+        ["xpath=//button/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "75420d01-9f5f-469c-a817-dbd0683f7ee9",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=BE 0818.993.269",
+      "targets": [
+        ["linkText=BE 0818.993.269", "linkText"],
+        ["css=.tr-anchor", "css:finder"],
+        ["xpath=//a[contains(text(),'BE 0818.993.269')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/company-information/auraportal-benelux-bv/divers/818993269')]", "xpath:href"],
+        ["xpath=//td/a", "xpath:position"],
+        ["xpath=//a[contains(.,'BE 0818.993.269')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e73b2dd5-ed7a-4826-839e-660bd64c2bd5",
+      "comment": "",
+      "command": "click",
+      "target": "css=.active > span",
+      "targets": [
+        ["css=.active > span", "css:finder"],
+        ["xpath=//section[@id='company-description']/div/div/div/div[2]/div/div/div[2]/div/span", "xpath:idRelative"],
+        ["xpath=//div[2]/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'BE 0818.993.269')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c1e17868-d76c-44dc-a306-3fa537a07791",
+      "comment": "",
+      "command": "storeText",
+      "target": "css=.active > span",
+      "targets": [
+        ["css=.active > span", "css:finder"],
+        ["xpath=//section[@id='company-description']/div/div/div/div[2]/div/div/div[2]/div/span", "xpath:idRelative"],
+        ["xpath=//div[2]/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'BE 0818.993.269')]", "xpath:innerText"]
+      ],
+      "value": "vat"
+    }]
+  }],
+  "suites": [{
+    "id": "d9ab0430-ac1c-47a3-8629-04956ead3906",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["de1b313d-6eed-4746-8592-17e309903cc4"]
+  }],
+  "urls": ["https://www.companyweb.be/"],
+  "plugins": []
+}

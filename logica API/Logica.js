@@ -70,6 +70,37 @@ module.exports = class Logica {
   } // ()
 
   // .................................................................
+  // empresa: Texto
+  // -->
+  // buscarEnGoogle ()
+  // -->
+  // json { VAT: Texto, Dirección: Texto}
+  // .................................................................
+  async buscarInfoEmpresa(empresa){
+    var driver = new webdriver.Builder().forBrowser('chrome').build();
+    var vat = ""
+    var direccion = ""
+    await driver.get('https://www.companyweb.be/en')
+    await driver.findElement(By.css('.btn-lg')).click();
+    await driver.findElement(By.css('.search-input')).sendKeys(empresa);
+    await driver.findElement(By.xpath('//*[@id="freeSearch"]/div[2]/span/button')).click();
+    await driver.findElement(By.xpath("//td/a")).click()
+    await driver.findElement(By.xpath('//*[@id="company-description"]/div/div/div/div[2]/div[1]/div[1]/div[2]/div/span')).getText().then(function(txt){
+      vat = txt
+    });;
+    await driver.findElement(By.xpath('//*[@id="address"]')).getText().then(function(txt){
+      direccion = txt
+    });
+
+    var res = {
+      vat: vat,
+      direccion: direccion
+    }
+
+    return res
+  } // ()
+
+  // .................................................................
   //          cerrar() -->
   // .................................................................
   cerrar() {

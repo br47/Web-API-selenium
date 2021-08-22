@@ -28,7 +28,7 @@ module.exports.cargar = function(servidorExpress, laLogica) {
     var datos = JSON.parse(peticion.body)
     await laLogica.abrirPaginaWeb(datos.pagina)
     respuesta.send("¡Abierta la web con éxito!")
-  }) // get /abrirWeb
+  }) // post /abrirWeb
 
   // .......................................................
   // POST /buscar
@@ -38,7 +38,17 @@ module.exports.cargar = function(servidorExpress, laLogica) {
     var datos = JSON.parse(peticion.body)
     await laLogica.buscarEnGoogle(datos.busqueda)
     respuesta.send("¡Búsqueda realizada con éxito!")
-  }) // get /abrirWeb
+  }) // post /buscar
+
+  // .......................................................
+  // POST /infoEmpresa
+  // .......................................................
+  servidorExpress.post('/infoEmpresa/', async function(peticion, respuesta) {
+    console.log(" * POST /infoEmpresa ")
+    var datos = JSON.parse(peticion.body);
+    var res = await laLogica.buscarInfoEmpresa(datos.empresa);
+    respuesta.send(JSON.stringify(res));
+  }) // post /infoEmpresa
 
 } // cargar()
 // .....................................................................
