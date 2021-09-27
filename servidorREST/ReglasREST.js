@@ -51,6 +51,15 @@ module.exports.cargar = function(servidorExpress, laLogica) {
     respuesta.send(JSON.stringify(res));
   }) // post /comparador
 
+  // .......................................................
+  // POST /ranking
+  // .......................................................
+  servidorExpress.get('/ranking2/', async function(peticion, respuesta) {
+    console.log(" * POST /ranking2 ")
+    var res = await laLogica.ranking();
+    respuesta.send(JSON.stringify(res));
+  }) // post /comparador
+
 } // cargar()
 // .....................................................................
 // .....................................................................

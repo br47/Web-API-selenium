@@ -134,6 +134,7 @@ module.exports = class Logica {
 
     //Creamos estructura de respuesta con las variables deseadas
     var res = {
+      nombre: empresa,
       vat: vat
     }
 
