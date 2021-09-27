@@ -4,14 +4,6 @@
 module.exports.cargar = function(servidorExpress, laLogica) {
 
   // .......................................................
-  // GET /prueba
-  // .......................................................
-  servidorExpress.get('/prueba/', function(peticion, respuesta) {
-    console.log(" * GET /prueba ")
-    respuesta.send("¡Funciona!")
-  }) // get /prueba
-
-  // .......................................................
   // GET /marca
   // .......................................................
   servidorExpress.get('/marca/', function(peticion, respuesta) {
@@ -49,6 +41,15 @@ module.exports.cargar = function(servidorExpress, laLogica) {
     var res = await laLogica.buscarInfoEmpresa(datos.empresa);
     respuesta.send(JSON.stringify(res));
   }) // post /infoEmpresa
+
+  // .......................................................
+  // POST /ranking
+  // .......................................................
+  servidorExpress.post('/ranking/', async function(peticion, respuesta) {
+    console.log(" * POST /ranking ")
+    var res = await laLogica.ranking();
+    respuesta.send(JSON.stringify(res));
+  }) // post /comparador
 
 } // cargar()
 // .....................................................................
